@@ -16,9 +16,9 @@ jobs:
           java-version: '11'
           cache: maven
           cache-dependency-path: workspace/shopizer/pom.xml
-      - name: Compile Shopizer with all injected bugs
+      - name: Compile complete Shopizer multi-module workspace
         working-directory: workspace/shopizer
-        run: bash mvnw -s .bugfix-maven-settings.xml -pl sm-core -am -DskipTests compile
+        run: bash mvnw -s .bugfix-maven-settings.xml -DskipTests compile
       - name: Run deliberately failing cart acceptance tests
         working-directory: workspace/shopizer
         shell: bash
