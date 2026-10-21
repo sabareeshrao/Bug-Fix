@@ -18,13 +18,13 @@ jobs:
           cache-dependency-path: workspace/shopizer/pom.xml
       - name: Compile Shopizer with all injected bugs
         working-directory: workspace/shopizer
-        run: bash mvnw -pl sm-core -am -DskipTests compile
+        run: bash mvnw -s .bugfix-maven-settings.xml -pl sm-core -am -DskipTests compile
       - name: Run deliberately failing cart acceptance tests
         working-directory: workspace/shopizer
         shell: bash
         run: |
           set +e
-          bash mvnw -pl sm-core -am -Dtest=CartCollectionChallengesTest -Dsurefire.failIfNoSpecifiedTests=false test > /tmp/cart-challenge-tests.log 2>&1
+          bash mvnw -s .bugfix-maven-settings.xml -pl sm-core -am -Dtest=CartCollectionChallengesTest -Dsurefire.failIfNoSpecifiedTests=false test > /tmp/cart-challenge-tests.log 2>&1
           exitcode=$?
           set -e
           tail -n 90 /tmp/cart-challenge-tests.log
