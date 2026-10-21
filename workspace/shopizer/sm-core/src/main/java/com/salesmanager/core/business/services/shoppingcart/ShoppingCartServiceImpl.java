@@ -413,7 +413,7 @@ public class ShoppingCartServiceImpl extends SalesManagerEntityServiceImpl<Long,
 									if (!duplicateFound) {
 										LOGGER.info("Dupliate item found..updating exisitng product quantity");
 										cartItem.setQuantity(
-												cartItem.getQuantity() + sessionShoppingCartItem.getQuantity());
+												Math.max(cartItem.getQuantity(), sessionShoppingCartItem.getQuantity()));
 										duplicateFound = true;
 										break;
 									}
