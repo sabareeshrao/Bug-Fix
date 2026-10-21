@@ -1,0 +1,46 @@
+name: Import pinned Shopizer reference (one time)
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/import-shopizer-reference.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: import-shopizer-reference
+  cancel-in-progress: false
+
+jobs:
+  archive-shopizer:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Copy the unmodified Shopizer 3.2.7 Git snapshot
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ -e reference/shopizer/pom.xml ]]; then
+            echo 'Already imported; refusing to overwrite immutable reference'
+            exit 0
+          fi
+          mkdir -p reference/shopizer
+          curl --fail --silent --show-error --location --retry 3 \
+            -o /tmp/shopizer-reference.tar.gz \
+            'https://codeload.github.com/shopizer-ecommerce/shopizer/tar.gz/6a4a0a65a3408ee8f62597b51d1b3aac24b77dee'
+          tar -tzf /tmp/shopizer-reference.tar.gz >/dev/null
+          tar -xzf /tmp/shopizer-reference.tar.gz \
+            -C reference/shopizer --strip-components=1
+          test -f reference/shopizer/pom.xml
+          test -f reference/shopizer/LICENSE.md
+          test -f reference/shopizer/sm-core-model/src/main/java/com/salesmanager/core/model/shoppingcart/ShoppingCart.java
+          git add -f reference/shopizer
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Archive complete untouched Shopizer source at 6a4a0a65a3408ee8f62597b51d1b3aac24b77dee'
+          git push origin HEAD:main
