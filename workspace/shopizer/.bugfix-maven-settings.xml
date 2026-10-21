@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.2.0">
+  <mirrors><mirror>
+    <id>bugfix-maven-central</id>
+    <name>Public Maven Central instead of legacy authenticated Spring releases</name>
+    <url>https://repo.maven.apache.org/maven2</url>
+    <mirrorOf>external:*</mirrorOf>
+  </mirror></mirrors>
+</settings>

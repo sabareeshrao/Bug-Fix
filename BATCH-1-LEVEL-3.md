@@ -19,6 +19,10 @@
 | B1-Q9-L3 | Order-preserving collection: Recently viewed products reordered | 20 |
 | B1-Q10-L3 | Collection choice: Priority processing loses ordering or duplicates | 27 |
 
+## Build compatibility
+
+The pinned Shopizer baseline uses a legacy Spring Maven repository that now rejects anonymous artifact access. This challenge workspace includes `.bugfix-maven-settings.xml` to use Maven Central without altering the original source-reference POM. Use that settings file for Maven commands.
+
 ## How to start
 
 1. Download this branch, open **`workspace/shopizer/pom.xml`** in IntelliJ as a Maven project.
@@ -30,7 +34,7 @@
 
 ```bash
 cd workspace/shopizer
-./mvnw -pl sm-core -am -Dtest=CartCollectionChallengesTest -Dsurefire.failIfNoSpecifiedTests=false test
+./mvnw -s .bugfix-maven-settings.xml -pl sm-core -am -Dtest=CartCollectionChallengesTest -Dsurefire.failIfNoSpecifiedTests=false test
 ```
 
 On Windows, replace `./mvnw` with `mvnw.cmd`.
