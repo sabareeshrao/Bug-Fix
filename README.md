@@ -37,3 +37,18 @@ cd Bug-Fix
 ```
 
 The `reference/shopizer/` directory contains ordinary copied source files, not a Git submodule. The source is already included in the clone or GitHub ZIP archive.
+
+
+## Practice branches — Batch 1: Java Collections
+
+These are **independent complete Shopizer working copies**. The original snapshot under `reference/` remains unchanged.
+
+| Difficulty | GitHub branch | Assignment |
+|---|---|---|
+| 1 year | [batch-1-level-1](../../tree/batch-1-level-1) | [10 Level 1 incidents](../../blob/batch-1-level-1/BATCH-1-LEVEL-1.md) |
+| 2 years | [batch-1-level-2](../../tree/batch-1-level-2) | [10 Level 2 incidents](../../blob/batch-1-level-2/BATCH-1-LEVEL-2.md) |
+| 3 years | [batch-1-level-3](../../tree/batch-1-level-3) | [10 Level 3 incidents](../../blob/batch-1-level-3/BATCH-1-LEVEL-3.md) |
+
+In each practice branch, download the ZIP and open `workspace/shopizer/pom.xml` in IntelliJ. The intentionally defective training code is in `workspace/shopizer`, **not** in `reference/shopizer`.
+
+Each level includes the original Shopizer source (1,340 files), a cart-merge defect in the real service, 9 additional collection operations in a new Shopizer domain-support class (10 exercises total), and 10 intentionally failing JUnit acceptance tests. The tests cover the new training routines; the original e-commerce application still needs separate regression verification.
