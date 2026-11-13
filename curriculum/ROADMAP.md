@@ -214,4 +214,4 @@
 
 After every 10 lessons, write a new regression-style exercise combining skills from that phase without counting it as a new unique concept. Do not create a new lesson ID for a practice-only review. A gate is a suggestion, not proof of mastery.
 
-**Current publishing checkpoint:** BFX-001 and BFX-002 are published; **next:** BFX-003 — Array index at the boundary. User mastery has not been assessed.
+**Current publishing checkpoint:** BFX-001, BFX-002 and BFX-003 are published; **next:** BFX-004 — Empty array produces unexpected result. User mastery has not been assessed.
