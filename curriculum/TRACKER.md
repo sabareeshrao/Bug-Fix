@@ -2,16 +2,16 @@
 
 **Rule:** This tracker records what content exists, **not** what the learner has personally mastered. `Published` indicates a lesson file was created. `Verified` requires explicit learner confirmation. Source bank's earlier Developer-7 progress (85/387+) is unrelated and must never be imported as completion here.
 
-- **Published:** 2 / 130
+- **Published:** 3 / 130
 - **Verified by learner:** 0 / 130 (none confirmed)
-- **Next lesson:** **BFX-003** — Array index at the boundary
+- **Next lesson:** **BFX-004** — Empty array produces unexpected result
 - **Read this before every “next lesson” request.** Update the specific status row after publishing. Never select an ID with a published lesson file.
 
 | Lesson ID | Phase | Primary concept (unique) | Topic | Publication | Learner verified |
 |---|---|---|---|---|---|
 | [BFX-001](lessons/BFX-001-average-integer-division.md) | 01 | `integer-division` | Integer division loses decimal precision | Published | No |
 | [BFX-002](lessons/BFX-002-cart-total-accumulation.md) | 01 | `running-total-accumulation` | Cart total overwritten in loop | Published | No |
-| BFX-003 | 01 | `array-off-by-one` | Array index at the boundary | Planned | No |
+| [BFX-003](lessons/BFX-003-array-index-boundary.md) | 01 | `array-off-by-one` | Array index at the boundary | Published | No |
 | BFX-004 | 01 | `empty-input-handling` | Empty array produces unexpected result | Planned | No |
 | BFX-005 | 01 | `condition-ordering` | Incorrect if/else branch ordering | Planned | No |
 | BFX-006 | 01 | `boolean-precedence` | AND/OR logic accepts invalid input | Planned | No |
@@ -143,7 +143,7 @@
 ## Next-lesson algorithm
 
 1. Read this file on `main` and inspect the lesson directory for consistency.
-2. Pick the first row marked `Planned` (currently `BFX-003`).
+2. Pick the first row marked `Planned` (currently `BFX-004`).
 3. Read that phase's original source sets from the [390-set roadmap](../reference/developer-7/docs/questions/roadmap/ALL_SETS_001_390.md). Use the original question as inspiration when relevant, but never call a synthetic scenario a verbatim original.
 4. Author a new **behavioral** bug with a stable comment marker and realistic output. Avoid repeating any earlier primary concept key.
 5. Publish one lesson Markdown file in a separate commit. Update only that row and the published count/next ID; never mark mastery verified unless the user confirms it.
