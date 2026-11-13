@@ -64,4 +64,6 @@ The original `reference/` archive and independent practice branches remain untou
 - [BFX-001 — Java integer division](curriculum/lessons/BFX-001-average-integer-division.md)
 - [BFX-002 — Order total accumulation](curriculum/lessons/BFX-002-cart-total-accumulation.md)
 
-**Next lesson:** BFX-003 — Array index at the boundary. New lessons use Java 21 and are committed separately.
+- [BFX-003 — Array index boundary](curriculum/lessons/BFX-003-array-index-boundary.md)
+
+**Next lesson:** BFX-004 — Empty array produces unexpected result. New lessons use Java 21 and are committed separately.
