@@ -52,3 +52,16 @@ These are **independent complete Shopizer working copies**. The original snapsho
 In each practice branch, download the ZIP and open `workspace/shopizer/pom.xml` in IntelliJ. The intentionally defective training code is in `workspace/shopizer`, **not** in `reference/shopizer`.
 
 Each level includes the original Shopizer source (1,340 files), a cart-merge defect in the real service, 9 additional collection operations in a new Shopizer domain-support class (10 exercises total), and 10 intentionally failing JUnit acceptance tests. The tests cover the new training routines; the original e-commerce application still needs separate regression verification.
+
+
+## Zero-to-Hero Java Bug Fix curriculum (new)
+
+The original `reference/` archive and independent practice branches remain untouched. A separate [130-lesson debugging curriculum](curriculum/ROADMAP.md) now sequences skills from fundamental Java logic to senior production incidents. [Lesson tracker](curriculum/TRACKER.md) prevents duplicate primary concepts and distinguishes published lessons from verified learner mastery.
+
+- [Course rules and lesson format](curriculum/README.md)
+- [Full ordered learning roadmap](curriculum/ROADMAP.md)
+- [Track lesson publication and next ID](curriculum/TRACKER.md)
+- [BFX-001 — Java integer division](curriculum/lessons/BFX-001-average-integer-division.md)
+- [BFX-002 — Order total accumulation](curriculum/lessons/BFX-002-cart-total-accumulation.md)
+
+**Next lesson:** BFX-003 — Array index at the boundary. New lessons use Java 21 and are committed separately.
